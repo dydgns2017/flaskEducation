@@ -23,7 +23,11 @@ def login():
     print("로그인 기능 진행")
     ## request.form["id"]
     ## request.form["pw"]
-    return outputJSON("login function", "ok")
+    ## id : "admin", pw : "1234" ==> 로그인 완료! 라고 출력될 수 있게!
+    if ( request.form["id"] == "admin" and request.form["pw"] == "1234"):
+        return outputJSON("login success", "ok")
+    else:
+        return outputJSON("false", "ok")
 
 
 def outputJSON(msg, status="error"):
